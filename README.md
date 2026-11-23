@@ -88,11 +88,7 @@ Edit `MODE` near the top of a run script:
 | M2 | Eccentric nucleus, SpinDoctor FEM | 18 / 2,295 |
 | M3 | Aqueous ellipsoidal inclusions, SpinDoctor FEM | 18 / 2,346 |
 
-M2/M3 were called M2a/M2b in archived research reports. This folder contains
-the definitive cases underlying the eight selected figures, not all exploratory
-or supplementary campaigns. **P2, N=60, finite inclusion permeability is not
-accepted**: it did not establish convergence within the resource budget. Only
-its sealed and transparent endpoints are distributed; Fig09 states this.
+This folder contains the definitive cases underlying the eight selected figures.
 
 Units: R/a in **um**, D in **um²/ms**, delta/Delta in **ms**, b in **s/mm²**,
 G in **T/m**. Public `m1_signal` takes physical kappa in **um/s**; the internal
