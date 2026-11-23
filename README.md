@@ -104,18 +104,14 @@ s = m1_signal(7., 4.2, 2., 2., 200., p) # default600 modes; kappa=0 or inf allow
 ```
 
 `pgse_protocol(b,delta,Delta)` also accepts custom arrays and derives G using
-the finite-pulse b formula and gamma=0.26752218744 in ms/um/T/m units.
-Spatial truncations are configurable, not universally certified. Strang64 is
-the sampled manuscript compromise, not an adaptive fitting scheme. Spectral
-truncation, FEM discretization, splitting error and physical GPA error remain
-different sources of discrepancy.
+the finite-pulse b formula.
 
 Fitting uses the original scaled-physical-coordinate multistart L-BFGS-B,
 D-stratum starts for joint fits, residual refinement and uniform retry policy.
 Bounds: R=[2,20], D=[0.3,3]. S0 is eliminated at **every** evaluation:
 `S0 = sum(counts*means*f) / sum(counts*f*f)`, including the noisy baseline group.
-Its b=0 mean only ranks starts; there are no amplitude bounds. P1 has5 shells
-and5 independent b=0 observations; P2 has8 and8, plus256 DW observations each.
+Its b=0 mean only ranks starts; there are no amplitude bounds. P1 has 5 shells
+and 5 independent b=0 observations; P2 has 8 and 8, plus 256 DW observations each.
 M0 has fixed-D Strang/GPA and free-D Strang experiments. For M1-M3, P1 uses
 free-D Strang plus fixed-D Strang/GPA; P2 uses free-D Strang/GPA. All outliers,
 boundary solutions and optimizer failures remain in the data and plots.
@@ -164,22 +160,13 @@ Inspect `fem_jobs` before executing one case at a time: large cases can require
 tens of GiB and hours. Internal FEM units are um/us. Sealed compartments retain
 all stationary modes and the original local/component completion; finite
 permeability uses the coupled problem. Transparent inclusions recover M1 with
-its nuclear barrier. Saved spherical quadrature, not direction multiplicity,
-defines the physical mean. Some reused M2 P1 signals used400 modes and a
-slightly older gamma; their descriptors preserve these historical settings.
-The relocated MATLAB route is included but **was not re-executed** during this
-consolidation. Saved signals remain the accepted inputs.
+its nuclear barrier.
 
 ## Checks and provenance
 
-`python verify.py` checks original noise streams for all92 cases, saved M0/M1
+`python verify.py` checks original noise streams for all 92 cases, saved M0/M1
 signal agreement, GPA and Numba consistency, zero modes, M1 limits, units,
-profiled S0, and four representative same-data fits. It does not repeat a
-convergence study or full campaign. `SOURCE_NOTES.json` records source hashes.
-Reference reports: `homogeneous_sphere_profiled_S0_results.pdf`,
-`m1_ablation_results_M1A_kappa50_100_20261113.pdf`,
-`m2a_radius_estimation_20261113.pdf`, `m2b_radius_estimation_20261114.pdf`.
-The full research archive and previous public version remain unchanged.
+profiled S0, and four representative same-data fits.
 
 Original code: **MIT** (`LICENSE`). SpinDoctor GPL and TetGen AGPL notices are
 kept in `fem/LICENSES.txt`; those programs are not redistributed here. Cite the
