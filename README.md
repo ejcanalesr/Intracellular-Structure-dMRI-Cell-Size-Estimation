@@ -7,8 +7,8 @@ investigated how neglecting these structures affects estimates of the outer cell
 radius.
 
 This repository accompanies the article 📢: 
-> **Inside the Sphere: The Role of Intracellular Structure in Diffusion MRI Cell-Size Estimation** by
-Erick J. Canales-Rodríguez, Ekin Taskin, Juan Manuel Górriz, Jean-Philippe Thiran, Jonathan Rafael-Patiño
+> **Inside the Sphere: The Role of Intracellular Structure in Diffusion MRI Cell-Size Estimation.**
+> by Erick J. Canales-Rodríguez, Ekin Taskin, Juan Manuel Górriz, Jean-Philippe Thiran, Jonathan Rafael-Patiño
 
 It provides numerical signal models from a homogeneous sphere (M0) to a concentric nucleus (M1), an eccentric
 nucleus (M2), and intracellular inclusions (M3), together with the definitive data
